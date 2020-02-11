@@ -11,6 +11,7 @@ const app = express();
 const { SERVER_PORT, SESSION_SECRET } = process.env;
 
 app.use(express.json());
+
 app.use(
   session({
     secret: SESSION_SECRET,
@@ -18,7 +19,6 @@ app.use(
     saveUninitialized: true
   })
 );
-
 
 app.use(check.checkForSession);
 
